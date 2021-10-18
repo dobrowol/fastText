@@ -21,7 +21,7 @@ set(HEADER_FILES
     src/args.h
     src/autotune.h
     src/densematrix.h
-    src/dictionary.h
+    src/logdictionary.h
     src/fasttext.h
     src/loss.h
     src/matrix.h
@@ -37,7 +37,7 @@ set(SOURCE_FILES
     src/args.cc
     src/autotune.cc
     src/densematrix.cc
-    src/dictionary.cc
+    src/logdictionary.cc
     src/fasttext.cc
     src/loss.cc
     src/main.cc

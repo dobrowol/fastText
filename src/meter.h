@@ -11,7 +11,7 @@
 #include <unordered_map>
 #include <vector>
 
-#include "dictionary.h"
+#include "logdictionary.h"
 #include "real.h"
 #include "utils.h"
 

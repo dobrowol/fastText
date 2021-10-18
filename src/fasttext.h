@@ -21,7 +21,7 @@
 
 #include "args.h"
 #include "densematrix.h"
-#include "dictionary.h"
+#include "logdictionary.h"
 #include "matrix.h"
 #include "meter.h"
 #include "model.h"
