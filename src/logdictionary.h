@@ -36,8 +36,10 @@ class Dictionary {
   static const int32_t MAX_VOCAB_SIZE = 30000000;
   static const int32_t MAX_LINE_SIZE = 1024;
 
-  int32_t find(const std::string&) const;
-  int32_t find(const std::string&, uint32_t h) const;
+  int32_t find(const std::vector<int16_t>&) const;
+  int32_t find(const std::vector<int16_t>&, uint32_t h) const;
+  std::string vect2str(const std::vector<int16_t>& w);
+  std::vector<int16_t> str2vec(const std::string& w);
   void initTableDiscard();
   void initNgrams();
   void reset(std::istream&) const;
@@ -82,14 +84,14 @@ class Dictionary {
   void getSubwords(
       const std::string&,
       std::vector<int32_t>&,
-      std::vector<std::string>&) const;
+      std::vector<std::vector<int16_t>>&) const;
   void computeSubwords(
       const std::string&,
       std::vector<int32_t>&,
-      std::vector<std::vector<int8_t>>* substrings = nullptr) const;
-  uint32_t hash(const std::vector<int8_t>& str) const;
-  void add(const std::string&);
-  bool readWord(std::istream&, std::string&) const;
+      std::vector<std::vector<int16_t>>* substrings = nullptr) const;
+  uint32_t hash(const std::vector<int16_t>& str) const;
+  void add(const std::vector<int16_t>&);
+  bool readWord(std::istream&, std::vector<int16_t>&) const;
   void readFromFile(std::istream&);
   std::string getLabel(int32_t) const;
   void save(std::ostream&) const;
