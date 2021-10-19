@@ -39,7 +39,7 @@ class Dictionary {
   int32_t find(const std::vector<int16_t>&) const;
   int32_t find(const std::vector<int16_t>&, uint32_t h) const;
   std::string vect2str(const std::vector<int16_t>& w);
-  std::vector<int16_t> str2vec(const std::string& w);
+  std::vector<int16_t> str2vec(const char * w);
   void initTableDiscard();
   void initNgrams();
   void reset(std::istream&) const;

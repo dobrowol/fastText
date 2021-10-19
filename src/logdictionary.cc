@@ -54,7 +54,7 @@ std::string Dictionary::vect2str(const std::vector<int16_t>& w)
     }
     return word;
 }
-std::vector<int16_t> Dictionary::str2vec(const std::string& str)
+std::vector<int16_t> Dictionary::str2vec(const char * str)
 {
     std::vector<int16_t> result;
 
@@ -136,7 +136,7 @@ void Dictionary::getSubwords(
   substrings.clear();
   if (i >= 0) {
     ngrams.push_back(i);
-    substrings.push_back(str2vec(words_[i].word));
+    substrings.push_back(str2vec(words_[i].word.c_str()));
   }
   if (word != EOS) {
     computeSubwords(BOW + word + EOW, ngrams, &substrings);
